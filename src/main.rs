@@ -8,7 +8,7 @@ const COLOR_OCHRE : &str = "\u{001b}[0;37m";
 const COLOR_RESET : &str = "\u{001b}[0m";
 
 fn main() {
-    let type_res = env::args().skip(1).next().unwrap();
+    let type_res = env::args().nth(1).unwrap();
     let output = Command::new("git").arg("status").output().expect("Failed to retrieve status from Git");
     let output = String::from_utf8_lossy(output.stdout.as_slice());
     let text = output.to_string();
