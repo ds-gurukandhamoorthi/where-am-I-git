@@ -1,5 +1,3 @@
-extern crate ansi_term;
-
 use std::process::Command;
 use std::env;
 
