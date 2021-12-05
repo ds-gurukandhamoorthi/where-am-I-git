@@ -20,7 +20,7 @@ fn main() {
         let output = Command::new("git").arg("status").output().expect("Failed to retrieve status from Git");
         let output = String::from_utf8_lossy(output.stdout.as_slice());
         let text = output.to_string();
-        let color = if !text.contains("working directory clean") {
+        let color = if !text.contains("working tree clean") {
             COLOR_RED
         }else if text.contains("Your branch is ahead of") {
             COLOR_YELLOW
